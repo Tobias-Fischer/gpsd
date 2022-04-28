@@ -600,7 +600,7 @@ int main(int argc, char *argv[])
          * if (0 == ioctl(device_fd, TIOCGETD, &ldisc)) {
          * always returns ldisc == 0 */
         // set PPS line discipline
-        ldisc = N_PPS;    // 18 - the PPS line discipline
+        ldisc = 18;    // 18 - the PPS line discipline
         if (0 > ioctl(device_fd, TIOCSETD, &ldisc)) {
             (void)printf("ERROR: ioctl(%s, TIOCSETD, 18) failed: %.80s(%d)\n",
                          argv[1], strerror(errno), errno);
